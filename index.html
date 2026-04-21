@@ -30,6 +30,7 @@ body{
   position:relative;
   overflow:hidden;
   animation:pulse 1.5s infinite;
+  margin:10px;
 }
 @keyframes pulse{50%{transform:scale(1.08)}}
 
@@ -46,10 +47,23 @@ body{
 @keyframes shine{100%{left:100%}}
 
 .btn-download{background:#00FFA3;color:#000;box-shadow:0 0 25px #00FFA3}
+.btn-qq{background:#5865F2;color:#fff;box-shadow:0 0 20px rgba(120,120,255,0.8)}
 
 /* 进度条 */
 .progress{width:80%;margin:20px auto;background:#222;border-radius:20px;overflow:hidden}
-.bar{width:92%;background:#00FFA3;padding:5px;text-align:right;color:#000;font-size:12px}
+.bar{width:95%;background:#00FFA3;padding:5px;text-align:right;color:#000;font-size:12px}
+
+/* 操作步骤图片 */
+.guide{
+  max-width:900px;
+  margin:40px auto;
+  text-align:center;
+}
+.guide img{
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
 
 /* 悬浮按钮 */
 .float{position:fixed;bottom:20px;right:20px;background:#00FFA3;padding:15px 25px;border-radius:50px;color:#000;font-weight:bold;animation:pulse 1.5s infinite}
@@ -72,13 +86,21 @@ body{
   </div>
 
   <a class="btn btn-download" href="https://cs20.gmaetqt.com/?p=10923">立即下载</a>
+  <a class="btn btn-qq" href="https://qun.qq.com/universal-share/share?ac=1&authKey=5F2e6UMJZ0RVPS1IQrREjmmBUzfJ7kSRluaocV4x%2F58D5UjUctip3LZ1K51KulR5&busi_data=eyJncm91cENvZGUiOiIxMDgwMjI5MzgwIiwidG9rZW4iOiJBQXEyQ01wSTdiMkkvcDYyOXczVVluR1JLdDZSdUx2ZWU3aitUMForTFFNZXJJSHRFWWVqMmY2bjQ1WExWMjFtIiwidWluIjoiMzI0Njc0NTU5NyJ9&data=kYV3MQ0n_skfizrw-Wth4881vgO_EuXmSlH-8ojHr8Wl499MVZx4WXknA6EVAYzstIbPaZBmomB-wx6rdui15Q&svctype=4&tempid=h5_group_info" target="_blank">加入玩家交流群</a>
 </div>
 
- <a class="btn btn-blue" href="https://qun.qq.com/universal-share/share?ac=1&authKey=5F2e6UMJZ0RVPS1IQrREjmmBUzfJ7kSRluaocV4x%2F58D5UjUctip3LZ1K51KulR5&busi_data=eyJncm91cENvZGUiOiIxMDgwMjI5MzgwIiwidG9rZW4iOiJBQXEyQ01wSTdiMkkvcDYyOXczVVluR1JLdDZSdUx2ZWU3aitUMForTFFNZXJJSHRFWWVqMmY2bjQ1WExWMjFtIiwidWluIjoiMzI0Njc0NTU5NyJ9&data=kYV3MQ0n_skfizrw-Wth4881vgO_EuXmSlH-8ojHr8Wl499MVZx4WXknA6EVAYzstIbPaZBmomB-wx6rdui15Q&svctype=4&tempid=h5_group_info" target="_blank" style="max-width:100%"><span class="bi">群</span><span>玩家交流群</span></a>
+<!-- 操作步骤图 -->
+<div style="text-align:center;margin-top:20px;font-size:18px;font-weight:bold;">📌 新手3步快速领取全部福利</div>
+<div class="guide">
+  <img src="file_0000000068e872069540fb4515ca1ff6" alt="操作步骤">
+</div>
+
+<a class="float" href="https://cs20.gmaetqt.com/?p=10923">🔥 下载游戏</a>
+
 <div class="modal" id="m">
   <div class="modal-box">
     <h3>🎁 限时福利</h3>
-    <p>CDK：<b>xincsneice</b></p>
+    <p>内测CDK：<b>xincsneice</b></p>
     <p style="font-size:13px;line-height:1.6">
     加冕王冠1999，经验水晶2w，魔法原石300，纪念卡卷3000，星羽铸币5000，红宝石60w，
     纯银铸造锤800，黄金铸造锤500，黄金齿轮300，龙宫钥匙120，恶魔熔炉钥匙20，
