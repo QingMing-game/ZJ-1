@@ -28,79 +28,42 @@ body{
   font-size:20px;
   text-decoration:none;
   position:relative;
+  overflow:hidden; /* 修复闪光溢出 */
   animation:pulse 1.5s infinite;
 }
 @keyframes pulse{50%{transform:scale(1.08)}}
+
+/* 修复闪光对齐问题 */
 .btn::before{
   content:"";
   position:absolute;
-  left:-80%;
-  width:50%;height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.8),transparent);
-  transform:skewX(-25deg);
-  animation:shine 2s infinite;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+  animation:shine 2.5s infinite;
 }
-@keyframes shine{100%{left:120%}}
+@keyframes shine{100%{left:100%}}
 
 .btn-download{background:#00FFA3;color:#000;box-shadow:0 0 25px #00FFA3}
 
 /* 进度条 */
-.progress{
-  width:80%;
-  margin:20px auto;
-  background:#222;
-  border-radius:20px;
-  overflow:hidden;
-}
-.bar{
-  width:92%;
-  background:#00FFA3;
-  padding:5px;
-  text-align:right;
-  color:#000;
-  font-size:12px;
-}
+.progress{width:80%;margin:20px auto;background:#222;border-radius:20px;overflow:hidden}
+.bar{width:92%;background:#00FFA3;padding:5px;text-align:right;color:#000;font-size:12px}
 
 /* 对比区 */
-.compare{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  margin-top:30px;
-}
-.card{
-  width:40%;
-  padding:15px;
-  border-radius:10px;
-}
+.compare{display:flex;justify-content:center;gap:20px;margin-top:30px}
+.card{width:40%;padding:15px;border-radius:10px}
 .bad{background:#5a1a1a}
 .good{background:#1a5a2e}
 
 /* 悬浮按钮 */
-.float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#00FFA3;
-  padding:15px 25px;
-  border-radius:50px;
-  color:#000;
-  font-weight:bold;
-  animation:pulse 1.5s infinite;
-}
+.float{position:fixed;bottom:20px;right:20px;background:#00FFA3;padding:15px 25px;border-radius:50px;color:#000;font-weight:bold;animation:pulse 1.5s infinite}
 
 /* 弹窗 */
-.modal{
-  position:fixed;
-  top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.7);
-  display:none;align-items:center;justify-content:center;
-}
-.modal-box{
-  background:linear-gradient(135deg,#1a2a6c,#b21f1f,#fdbb2d);
-  padding:20px;border-radius:12px;width:90%;max-width:500px;
-}
-
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center}
+.modal-box{background:linear-gradient(135deg,#1a2a6c,#b21f1f,#fdbb2d);padding:20px;border-radius:12px;width:90%;max-width:500px}
 </style>
 </head>
 <body>
@@ -145,10 +108,18 @@ body{
 </div>
 
 <script>
-setTimeout(()=>{document.getElementById('m').style.display='flex'},600);
+setTimeout(()=>{
+  document.getElementById('m').style.display='flex'
+},600);
+
 function closeM(){
  document.getElementById('m').style.display='none';
- setTimeout(()=>{alert('最后确认：是否放弃88888礼包？')},300);
+ // 延迟+概率触发，避免立刻弹出
+ setTimeout(()=>{
+   if(Math.random()>0.5){
+     alert('最后确认：是否放弃88888礼包？');
+   }
+ },1200);
 }
 </script>
 
